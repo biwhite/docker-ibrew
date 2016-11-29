@@ -14,7 +14,7 @@ $ docker build -t biwhite/ibrew .
 Run with:
 
 ```
-docker run --name ibrew -d -p 2080:2080 -v /opt/ibrew:/root/.iBrew \
+docker run --name ibrew -d --net=host -v /opt/ibrew:/root/.iBrew \
   -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket biwhite/ibrew
 ```
 
@@ -44,10 +44,6 @@ If using the volume mappings above
   * Machines should each have their own file, /opt/ibrew/x.x.x.x.conf
 
 You can view the iBrew app announcing itself using the ```avahi-browse -a``` command on the host, or other machines on your network.
-
-## TODO ##
-
-  * Communicating outside of docker not yet working
 
 ## Links ##
 
