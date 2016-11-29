@@ -14,7 +14,8 @@ $ docker build -t biwhite/ibrew .
 Run with:
 
 ```
-docker run --name ibrew -d -p 2080:2080 -v /opt/ibrew:/root/.iBrew -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket biwhite/alpine-ibrew
+docker run --name ibrew -d -p 2080:2080 -v /opt/ibrew:/root/.iBrew \
+  -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket biwhite/ibrew
 ```
 
 Obtain a shell within the running environment with:
