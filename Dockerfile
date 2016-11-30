@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Ben White <ben@cuckoo.org>
 RUN apk update && apk add bash avahi-tools avahi-compat-libdns_sd screen python git py-tornado
-ADD https://github.com/just-containers/s6-overlay/releases/download/v1.11.0.1/s6-overlay-amd64.tar.gz /tmp/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.18.1.5/s6-overlay-amd64.tar.gz /tmp/
 RUN tar xzf /tmp/s6-overlay-amd64.tar.gz -C /
 ADD root /
 WORKDIR /home/app
