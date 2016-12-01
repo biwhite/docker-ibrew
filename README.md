@@ -15,7 +15,8 @@ Run with:
 
 ```
 docker run --name ibrew -d --net=host -v /opt/ibrew:/root/.iBrew \
-  -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket biwhite/ibrew
+  -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
+  -p 2080 biwhite/ibrew
 ```
 
 Obtain a shell within the running environment with:
@@ -42,6 +43,7 @@ If using the volume mappings above
   * License file will be in /opt/ibrew/.ibrew
   * Logs will be in /opt/ibrew/logs/
   * Machines should each have their own file, /opt/ibrew/x.x.x.x.conf
+  * You will now have an iBrew web UI running on http://localhost:2080/
 
 You can view the iBrew app announcing itself using the ```avahi-browse -a``` command on the host, or other machines on your network.
 
