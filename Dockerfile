@@ -9,8 +9,7 @@ RUN wget http://groups.csail.mit.edu/o2s/download/pybonjour/pybonjour-1.1.1.tar.
 RUN tar -zxf pybonjour-1.1.1.tar.gz
 RUN cd pybonjour-1.1.1 && /usr/bin/python setup.py install
 RUN git clone https://github.com/Tristan79/iBrew.git
-RUN sed -i 's/x = raw_input("")/time.sleep(60)/' iBrew/iBrewConsole.py
+#RUN sed -i 's/x = raw_input("")/time.sleep(60)/' iBrew/iBrewConsole.py
 VOLUME /var/run/dbus/system_bus_socket
-VOLUME /root/.iBrew/
 EXPOSE 2080
 ENTRYPOINT ["/init"]
