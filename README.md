@@ -14,10 +14,12 @@ $ docker build -t biwhite/ibrew .
 Run with:
 
 ```
-docker run --name ibrew -d --net=host -v /opt/ibrew:/root/.iBrew \
+docker run --name ibrew -d -v /opt/ibrew:/etc/iBrew \
   -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket \
-  -p 2080 biwhite/ibrew
+  -p 2080:2080 biwhite/ibrew
 ```
+
+If you want auto-discovery to work, then you need to include ```--net=host``` as it uses IP broadcast messages to find devices.
 
 Obtain a shell within the running environment with:
 
